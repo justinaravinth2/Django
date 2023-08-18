@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title> {%block title %} Uniworld {% endblock%}</title>
+</head>
+<body>  
+    <div class="navbar-header">
+        <div class="navbar-admin">
+            <a class="admin" >Admin</a>
+            <div class="navbar-admin-content">
+                <a href="">Users Management</a><hr>
+                <a href="">Port Request</a>
+                <a href="">DML Script</a>
+                <a href="">Branch Request</a>
+            </div>
+        </div>
+        <div class="navbar-air">
+            <a class="air">AIR</a>
+            <div class="navbar-air-content">
+                <a href="">Air-Inbound</a>
+                <a href="">Air-Outbound</a>
+            </div>
+        </div>
+        <div class="navbar-sea">
+            <a class="sea">SEA</a>
+            <div class="navbar-sea-content">
+                <a href="">Sea-Inbound</a>
+                <a href="">Sea-Outbound</a>
+            </div>
+        </div>
+        <a class="logout" href="/logout">Logout</a>
+    </div>
+
+    {% block main-content %}
+   
+    {% endblock main-content  %}
+</body>
+</html>

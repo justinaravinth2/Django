@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'backgroundimage.css' %}">
+  </head>
+<body class="bdy">
+  
+  {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+       {{message}}
+      </div>
+      {% endfor%}
+    {% endif%}
+  <form action=" " method="POST">
+    {% csrf_token %}
+    
+    <div class="intro">
+      <h1 class="first">W</h1>
+      <p class="para">elcome to the Uniworld Logistics Group, Bangalore (India) - Your destination to a complete supply chain network. We bring you a one-stop solution for all your logistic requirements - Sharing with you thousands of solutions that we have customized for our discerning customers, over a decade across the globe and catering to multiple domains across various industry verticals.</p>
+    </div>
+    <div class="login">
+      <h2>Login</h2>
+      <label for="" class="uname">User Name</label><br>
+      <input type="text" name="username" id=""><br>
+      <label for="" class="pswd">Password</label><br>
+      <input type="password" name="pasword" id=""><br>
+     <a href="" ><button class="loginbtn">Login</button></a>
+    </div>
+  </form>
+  <a href="{% url 'register' %}"><button>Register</button></a>
+</body>
+</html>

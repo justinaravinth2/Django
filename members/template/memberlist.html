@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+ 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {%block title %}  {% endblock%}
+</head>
+<body>
+  {% include "base.html" %}
+  <h1>Member Details</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    {% for i in mymemb %}
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.firstname}}</td>
+      <td>{{i.lastname}}</td>
+      <td><a href=" updates/{{i.id}} "><button>Edit</button></a></td>
+      <td><a href=" delete/{{i.id}} "><button>Delete</button></a></td>
+    </tr>
+    {% endfor %}
+  </table><br>
+
+  <a href="{% url 'add' %}"><button>Add Member</button></a>
+  {% block main-content %}
+
+  {% endblock %}
+</body>
+</html>
+
+
+<html>
+</html>

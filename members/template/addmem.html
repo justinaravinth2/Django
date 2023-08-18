@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'base.html' %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%block title %}  {% endblock%}
+</head>
+<body>
+    
+    <form action="{% url 'addrec' %}" method="POST">
+        {% csrf_token %}
+        <label for="name">First name</label>
+        <input type="text" name="fname"  placeholder="Enter your First Name" required="True"><br>
+        <label for="lnm">Last Name</label>
+        <input type="text" name="lname" placeholder="Enter your Last Name"required="True"><br>
+       <input type="submit" value="submit">
+    </form>
+
+    {% block main-content %}{% endblock main-content %}
+</body>
+</html>
